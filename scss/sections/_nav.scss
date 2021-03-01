@@ -1,0 +1,41 @@
+.nav {
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+
+  &__links {
+    transform: translateX(120%);
+    position: fixed;
+    background: #fff;
+    width: 88%;
+    left: 0;
+    margin: 2rem 1.5rem;
+    color: $black;
+    margin-top: 20rem;
+    border-radius: 7px;
+  }
+
+  &__link {
+    list-style: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1.5rem;
+
+    border-bottom: 1px solid $dk-gray;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+a {
+  color: $black;
+}
+
+.nav__links.show-menu {
+  transform: translateX(0);
+}

@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: url(/images/image-hero-mobile.jpg) top/contain no-repeat #f2f2f2;
+  font-family: "Commissioner", sans-serif; }
+
+a {
+  text-decoration: none; }
+
+body.show-menu {
+  overflow-y: hidden; }
+  body.show-menu::after {
+    content: "";
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 0; }
+
+.section {
+  background: #fff;
+  width: 80%;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  border-radius: 7px; }
+
+.nav {
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3; }
+  .nav__links {
+    transform: translateX(120%);
+    position: fixed;
+    background: #fff;
+    width: 88%;
+    left: 0;
+    margin: 2rem 1.5rem;
+    color: black;
+    margin-top: 20rem;
+    border-radius: 7px; }
+  .nav__link {
+    list-style: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1.5rem;
+    border-bottom: 1px solid #7a7a7a; }
+    .nav__link:last-child {
+      border-bottom: none; }
+
+a {
+  color: black; }
+
+.nav__links.show-menu {
+  transform: translateX(0); }
