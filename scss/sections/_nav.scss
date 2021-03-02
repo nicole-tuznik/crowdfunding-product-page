@@ -1,5 +1,5 @@
 .nav {
-  padding: 1.5rem;
+  padding: 2rem;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -14,17 +14,17 @@
     left: 0;
     margin: 2rem 1.5rem;
     color: $black;
-    margin-top: 20rem;
-    border-radius: 7px;
+    margin-top: 23rem;
+    border-radius: 10px;
   }
 
   &__link {
     list-style: none;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 500;
     padding: 1.5rem;
 
-    border-bottom: 1px solid $dk-gray;
+    border-bottom: 1px solid $lt-gray;
 
     &:last-child {
       border-bottom: none;

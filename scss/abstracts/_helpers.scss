@@ -1,0 +1,37 @@
+.section {
+  background: #fff;
+  width: 85%;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.cyan-btn {
+  padding: 1.3rem 2.5rem;
+  background: $cyan;
+  color: #fff;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  outline: none;
+  border: none;
+}
+
+.gray-btn {
+  padding: 1.3rem 2.5rem;
+  background: $dk-gray;
+  color: #fff;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  outline: none;
+  border: none;
+}
+
+.out-of-stock {
+  opacity: 50%;
+}

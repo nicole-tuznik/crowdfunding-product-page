@@ -1,0 +1,26 @@
+.hero {
+  margin-top: 12rem;
+  position: relative;
+  text-align: center;
+
+  &__logo {
+    position: absolute;
+    top: -11%;
+    left: 40%;
+  }
+
+  &__heading {
+    padding: 1rem 0;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+
+  &__btn {
+    margin-right: 1rem;
+  }
+}

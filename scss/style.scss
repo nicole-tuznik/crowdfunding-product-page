@@ -1,6 +1,6 @@
-@import "helpers/basics";
-@import "helpers/variables";
-@import "helpers/helpers";
+@import "abstracts/variables";
+@import "abstracts/basics";
+@import "abstracts/helpers";
 
 @import "modals/selection";
 @import "modals/success";

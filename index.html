@@ -26,15 +26,15 @@
     <h1 class="hero__heading">Mastercraft Bamboo Monitor Riser</h1>
     <p class="hero__text">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
     <div class="hero__buttons">
-      <button class="hero__btn">Back this project</button>
+      <button class="hero__btn cyan-btn">Back this project</button>
       <img src="/images/icon-bookmark.svg" alt="Bookmark this project" class="hero__bookmark">
     </div>
   </div>
 
   <div class="backed section">
-    <div class="backed__amt-raised"><span class="backed--lg-text">$89,914</span> of $100,000 backed</div>
-    <div class="backed__total-backers"><span class="backed--lg-text">5,007</span> total backers</div>
-    <div class="backed__days-left"><span class="backed--lg-text">56</span> days left</div>
+    <p class="backed__amt-raised backed__section"><span class="backed--lg-text">$89,914</span> of $100,000 backed</p>
+    <p class="backed__total-backers backed__section"><span class="backed--lg-text">5,007</span> total backers</p>
+    <p class="backed__days-left backed__section"><span class="backed--lg-text">56</span> days left</p>
     <div class="backed__progress-bar">
       <div class="backed__progress-completed"></div>
     </div>
@@ -47,6 +47,7 @@
         The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen
         to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve
         your posture and make you more comfortable while at work, helping you stay focused on the task at hand.
+        <br><br>
         Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer
         to allow notepads, pens, and USB sticks to be stored under the stand.
       </p>
@@ -59,8 +60,8 @@
         You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
         you’ll be added to a special Backer member list.
       </p>
-      <div class="reward__left"><span class="reward--lg-text">101</span> left</div>
-      <button class="reward__btn">Select Reward</button>
+      <p class="reward__left"><span class="reward--lg-text">101</span> left</p>
+      <button class="reward__btn cyan-btn">Select Reward</button>
     </div>
 
     <div class="reward" id="reward2">
@@ -70,8 +71,8 @@
         You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
         member list. Shipping is included.
       </p>
-      <div class="reward__left"><span class="reward--lg-text">64</span> left</div>
-      <button class="reward__btn">Select Reward</button>
+      <p class="reward__left"><span class="reward--lg-text">64</span> left</p>
+      <button class="reward__btn cyan-btn">Select Reward</button>
     </div>
 
     <div class="reward out-of-stock" id="reward3">
@@ -81,26 +82,30 @@
         You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
         to our Backer member list. Shipping is included.
       </p>
-      <div class="reward__remaining"><span class="reward--lg-text">0</span> left</div>
-      <button class="reward__btn">Out of Stock</button>
+      <p class="reward__left"><span class="reward--lg-text">0</span> left</p>
+      <button class="reward__btn gray-btn">Out of Stock</button>
     </div>
   </div>
 
   <!-- Selection modal start -->
 
-  <div class="selection-modal">
+  <div class="selection-modal section">
     <h1 class="selection-modal__heading">Back this project</h1>
     <p class="selection-modal__text">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
     
     <div class="modal-option" >
-      <input type="radio" id="no-reward">
-      <label for="no-reward">
-        <h5 class="modal-option__title">Pledge with no reward</h5>
-        <p class="modal-option__text">
+      <label class="radio">
+        <span class="radio_input">
+          <input type="radio" id="no-reward">
+          <span class="radio_control"></span>
+        </span>
+        <h5 class="radio_label">Pledge with no reward</h5>
+      </label>
+          <p class="modal-option__text">
           Choose to support us without a reward if you simply believe in our project. As a backer,
           you will be signed up to receive product updates via email.
         </p>
-      </label>
+      
     </div>
 
     <div class="modal-option" >

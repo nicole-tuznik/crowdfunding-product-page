@@ -1,0 +1,51 @@
+.backed {
+  text-align: center;
+
+  &--lg-text {
+    font-size: clamp(2.5rem, 5vw, 7rem);
+    font-weight: 700;
+    color: $black;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 2rem 0;
+  }
+
+  &__amt-raised {
+    padding-top: 1rem;
+  }
+
+  &__amt-raised::after,
+  &__total-backers::after {
+    position: absolute;
+    content: "";
+    width: 90px;
+    height: 2px;
+    border-bottom: 1px solid $dk-gray;
+    display: block;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &__progress-bar {
+    content: "";
+    width: 100%;
+    height: 1rem;
+    background: $lt-gray;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+
+  &__progress-completed {
+    content: "";
+    width: 89%;
+    height: 100%;
+    background: $cyan;
+    border-radius: 10px;
+  }
+}
