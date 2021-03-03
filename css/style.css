@@ -52,7 +52,8 @@ p {
   letter-spacing: 1px;
   border-radius: 50px;
   outline: none;
-  border: none; }
+  border: none;
+  cursor: pointer; }
 
 .gray-btn {
   padding: 1.3rem 2.5rem;
@@ -64,17 +65,31 @@ p {
   letter-spacing: 1px;
   border-radius: 50px;
   outline: none;
-  border: none; }
+  border: none;
+  cursor: pointer; }
 
 .out-of-stock {
   opacity: 50%; }
 
 .selection-modal {
-  position: absolute;
-  top: 10rem;
-  left: 0;
-  right: 0;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  max-height: 100%;
+  top: 50%;
+  left: 50%;
+  overflow: auto;
+  transform: translate(-50%, -50%);
   box-shadow: 0px 0px 0px 100vw rgba(0, 0, 0, 0.5); }
+  .selection-modal__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem; }
+  .selection-modal__text {
+    padding: 1.5rem 0; }
+  .selection-modal__close {
+    cursor: pointer; }
 
 .modal-option {
   padding: 1.5rem;
@@ -86,24 +101,58 @@ p {
   display: flex;
   align-items: center;
   padding-bottom: 1rem; }
+  .radio__input {
+    display: flex; }
+    .radio__input input {
+      opacity: 0;
+      width: 0;
+      height: 0; }
+  .radio .radio__input input + .radio__control::before {
+    content: "";
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    transition: 0.5s transform ease-in-out;
+    transform: scale(0); }
+  .radio .radio__input input:checked + .radio__control::before {
+    transform: scale(1); }
+  .radio__control {
+    display: grid;
+    place-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 0.1em solid #7a7a7a; }
+  .radio__label {
+    line-height: 1; }
 
-.radio_input {
-  display: flex; }
-  .radio_input input {
-    opacity: 0;
-    width: 0;
-    height: 0; }
+.selection-modal.closed {
+  display: none; }
 
-.radio_control {
-  display: block;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  border: 0.1em solid #7a7a7a; }
-
-.radio_label {
-  line-height: 1;
-  padding-left: 1rem; }
+.selected-pledge {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  margin-top: 1rem;
+  position: relative; }
+  .selected-pledge::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    border-bottom: 1px solid #7a7a7a; }
+  .selected-pledge__title {
+    margin-bottom: 1rem; }
+  .selected-pledge__inputs {
+    display: flex;
+    justify-content: center; }
+  .selected-pledge__amt {
+    border-radius: 50px;
+    width: 7rem;
+    padding: 1rem;
+    margin-right: 1rem; }
 
 @use '../abstracts' as *;
 .about__heading {
