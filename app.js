@@ -28,3 +28,30 @@ rewardBtns.forEach(function (btn) {
 closeBtn.addEventListener("click", function () {
   selectionModal.classList.add("closed");
 });
+
+// Create cyan outline on selected option
+const radioInputs = document.querySelectorAll(".radio__input input");
+
+radioInputs.forEach(function (input) {
+  input.addEventListener("click", function (e) {
+    for (i = 0; i < radioInputs.length; i++) {
+      if (radioInputs[i].checked) {
+        radioInputs[i].closest(".modal-option").style.border =
+          "2px solid hsl(176, 50%, 47%)";
+
+        if (i !== 0) {
+          radioInputs[i].closest(".modal-option").children[3].style.display =
+            "flex";
+        }
+      } else {
+        radioInputs[i].closest(".modal-option").style.border =
+          "1px solid black";
+
+        if (i !== 0) {
+          radioInputs[i].closest(".modal-option").children[3].style.display =
+            "none";
+        }
+      }
+    }
+  });
+});
