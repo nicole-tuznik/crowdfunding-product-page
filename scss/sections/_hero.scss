@@ -21,7 +21,55 @@
     margin-top: 1.5rem;
   }
 
+  &__bookmark {
+    padding: 1.5rem;
+    background: $black;
+    border-radius: 50%;
+    color: $lt-gray;
+  }
+
   &__btn {
     margin-right: 1rem;
+  }
+
+  &__bookmark-btn {
+    background: transparent;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      .hero__bookmark {
+        background: $dk-gray;
+      }
+    }
+  }
+
+  &__bookmark-txt {
+    display: none;
+  }
+}
+
+@media (min-width: 800px) {
+  .hero {
+    &__buttons {
+      justify-content: space-between;
+    }
+
+    &__bookmark-btn {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background: $lt-gray;
+      border-radius: 27px;
+    }
+
+    &__bookmark-txt {
+      display: block;
+      padding: 1.3rem 1.5rem 1.3rem 1.3rem;
+      color: $dk-gray;
+      font-size: 1rem;
+    }
   }
 }

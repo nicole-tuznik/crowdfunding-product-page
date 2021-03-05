@@ -1,1 +1,26 @@
-@use '../abstracts' as *;
+.success-modal {
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  background: #fff;
+  height: 60%;
+  padding: 1.5rem;
+  width: 85%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px 100vw rgba(0, 0, 0, 0.5);
+
+  @media (min-width: 800px) {
+    max-width: 50%;
+    max-height: 50%;
+
+    img {
+      height: 5rem;
+    }
+  }
+}

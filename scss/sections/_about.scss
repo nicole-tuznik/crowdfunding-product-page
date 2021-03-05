@@ -5,6 +5,10 @@
 
   &__text {
     padding-bottom: 1rem;
+
+    @media (min-width: 800px) {
+      padding-bottom: 3rem;
+    }
   }
 }
 
@@ -34,5 +38,36 @@
     font-weight: 700;
     color: $black;
     padding-right: 0.7rem;
+  }
+
+  @media (min-width: 800px) {
+    display: grid;
+    grid-template-areas:
+      "name . pledge"
+      "text text text"
+      "left . btn";
+
+    &__name {
+      grid-area: name;
+    }
+
+    &__pledge {
+      grid-area: pledge;
+      justify-self: end;
+      padding-top: 0;
+    }
+
+    &__text {
+      grid-area: text;
+    }
+
+    &__left {
+      grid-area: left;
+      padding-bottom: 0;
+    }
+
+    &__btn {
+      grid-area: btn;
+    }
   }
 }

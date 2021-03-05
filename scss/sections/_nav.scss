@@ -39,3 +39,33 @@ a {
 .nav__links.show-menu {
   transform: translateX(0);
 }
+
+@media (min-width: 800px) {
+  .hamburger {
+    display: none;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+
+    &__links {
+      display: flex;
+      background: none;
+      transform: none;
+      position: inherit;
+      width: auto;
+      margin: 0;
+    }
+
+    &__link {
+      color: #fff;
+      border-bottom: none;
+      font-size: 1.3rem;
+    }
+  }
+}

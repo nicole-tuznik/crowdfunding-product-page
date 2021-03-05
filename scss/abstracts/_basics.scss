@@ -9,6 +9,11 @@ body {
     hsl(0, 0%, 95%);
   font-family: "Commissioner", sans-serif;
   text-align: left;
+
+  @media (min-width: 800px) {
+    background: url(/images/image-hero-desktop.jpg) top/contain no-repeat
+      hsl(0, 0%, 95%);
+  }
 }
 
 a {
@@ -35,7 +40,7 @@ h1 {
 }
 
 h5 {
-  font-size: clamp(1rem, 2vw, 3rem);
+  font-size: clamp(1rem, 1.5vw, 3rem);
 }
 
 p {

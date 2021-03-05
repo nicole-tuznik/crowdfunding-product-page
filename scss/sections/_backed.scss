@@ -2,7 +2,7 @@
   text-align: center;
 
   &--lg-text {
-    font-size: clamp(2.5rem, 5vw, 7rem);
+    font-size: clamp(2rem, 3vw, 5rem);
     font-weight: 700;
     color: $black;
   }
@@ -47,5 +47,40 @@
     height: 100%;
     background: $cyan;
     border-radius: 10px;
+  }
+}
+
+@media (min-width: 800px) {
+  .backed {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr, 5rem;
+    text-align: left;
+
+    &__section {
+      padding: 0 2rem;
+    }
+
+    &__progress-bar {
+      grid-row: 2;
+      grid-column: 1 / span 3;
+      margin-top: 2rem;
+    }
+
+    &__amt-raised {
+      padding: 0;
+    }
+
+    &__amt-raised,
+    &__total-backers {
+      border-right: 1px solid $dk-gray;
+    }
+
+    &__amt-raised::after,
+    &__total-backers::after {
+      content: none;
+    }
   }
 }

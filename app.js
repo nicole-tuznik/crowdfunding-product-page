@@ -13,7 +13,7 @@ hamburger.addEventListener("click", function () {
   }
 });
 
-// Modals - pledge modal
+// Modals - show and hide pledge modal
 
 let rewardBtns = document.querySelectorAll(".reward__btn");
 const closeBtn = document.querySelector(".selection-modal__close");
@@ -26,7 +26,7 @@ rewardBtns.forEach(function (btn) {
 });
 
 closeBtn.addEventListener("click", function () {
-  selectionModal.classList.add("closed");
+  selectionModal.classList.toggle("closed");
 });
 
 // Create cyan outline on selected option
@@ -54,4 +54,20 @@ radioInputs.forEach(function (input) {
       }
     }
   });
+});
+
+// Modals - show/hide success modal
+const continueBtns = document.querySelectorAll(".selected-pledge__btn");
+const successModal = document.querySelector(".success-modal");
+const successModalClose = document.querySelector(".success-modal__btn");
+
+continueBtns.forEach(function (btn) {
+  btn.addEventListener("click", function (e) {
+    selectionModal.classList.toggle("closed");
+    successModal.style.display = "flex";
+  });
+});
+
+successModalClose.addEventListener("click", function () {
+  successModal.style.display = "none";
 });
