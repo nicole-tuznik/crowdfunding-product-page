@@ -65,7 +65,7 @@
         you’ll be added to a special Backer member list.
       </p>
       <p class="reward__left"><span class="reward--lg-text">101</span> left</p>
-      <button class="reward__btn cyan-btn">Select Reward</button>
+      <button class="reward__btn bamboo-stand cyan-btn">Select Reward</button>
     </div>
 
     <div class="reward" id="reward2">
@@ -76,7 +76,7 @@
         member list. Shipping is included.
       </p>
       <p class="reward__left"><span class="reward--lg-text">64</span> left</p>
-      <button class="reward__btn cyan-btn">Select Reward</button>
+      <button class="reward__btn black-edition-stand cyan-btn">Select Reward</button>
     </div>
 
     <div class="reward out-of-stock" id="reward3">
@@ -87,7 +87,7 @@
         to our Backer member list. Shipping is included.
       </p>
       <p class="reward__left"><span class="reward--lg-text">0</span> left</p>
-      <button class="reward__btn gray-btn">Out of Stock</button>
+      <button class="reward__btn mahogany-special-edition gray-btn">Out of Stock</button>
     </div>
   </div>
 
@@ -100,11 +100,11 @@
     </div>
     <p class="selection-modal__text">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
     
-    <div class="modal-option" >
+    <div class="modal-option " >
 
       <label class="radio">
         <span class="radio__input">
-          <input type="radio" id="no-reward" name="pledge">
+          <input type="radio" class="no-reward" name="pledge">
           <span class="radio__control"></span>
         </span>
         <h5 class="radio__label">Pledge with no reward</h5>
@@ -115,13 +115,22 @@
           you will be signed up to receive product updates via email.
         </p>
       
+      <!-- Selected pledge start -->
+      <div class="selected-pledge no-reward">
+        <!-- <p class="selected-pledge__title">Enter your pledge</p> -->
+        <div class="selected-pledge__inputs">
+          <!-- <input type="number" class="selected-pledge__amt" min="25" placeholder="25"></input> -->
+          <button class="selected-pledge__btn cyan-btn">Continue</button>
+        </div>
+      </div>
+      <!-- Selected pledge end -->
     </div>
 
     <div class="modal-option" >
 
       <label class="radio">
         <span class="radio__input">
-          <input type="radio" id="bamboo-stand" name="pledge">
+          <input type="radio" class="bamboo-stand" name="pledge">
           <span class="radio__control"></span>
         </span>
         <div class="radio__label">
@@ -138,10 +147,10 @@
         
       
       <!-- Selected pledge start -->
-      <div class="selected-pledge">
+      <div class="selected-pledge bamboo-stand">
         <p class="selected-pledge__title">Enter your pledge</p>
         <div class="selected-pledge__inputs">
-          <input type="text" class="selected-pledge__amt" placeholder="25"></input>
+          <input type="number" class="selected-pledge__amt" min="25" placeholder="25"></input>
           <button class="selected-pledge__btn cyan-btn">Continue</button>
         </div>
       </div>
@@ -151,7 +160,7 @@
     <div class="modal-option" >
       <label class="radio">
         <span class="radio__input"> 
-          <input type="radio" id="black-edition-stand" name="pledge">
+          <input type="radio" class="black-edition-stand" name="pledge">
           <span class="radio__control"></span>
         </span>
         <div class="radio__label">
@@ -168,20 +177,20 @@
         
       
       <!-- Selected pledge start -->
-      <div class="selected-pledge">
+      <div class="selected-pledge black-edition-stand">
         <p class="selected-pledge__title">Enter your pledge</p>
         <div class="selected-pledge__inputs">
-          <input type="text" class="selected-pledge__amt" placeholder="75"></input>
+          <input type="number" class="selected-pledge__amt" min="75" placeholder="75"></input>
           <button class="selected-pledge__btn cyan-btn">Continue</button>
         </div>
       </div>
       <!-- Selected pledge end -->
     </div>
 
-    <div class="modal-option out-of-stock" id="mahogany-special-edition">
+    <div class="modal-option out-of-stock">
       <label class="radio">
         <span class="radio__input">
-          <input type="radio" id="mahogany-special-edition" name="pledge">
+          <input type="radio" class="mahogany-special-edition" name="pledge">
           <span class="radio__control"></span>
         </span>
           <div class="radio__label">
@@ -198,10 +207,10 @@
         
       
       <!-- Selected pledge start -->
-      <div class="selected-pledge">
+      <div class="selected-pledge mahogany-special-edition">
         <p class="selected-pledge__title">Enter your pledge</p>
         <div class="selected-pledge__inputs">
-          <input type="text" class="selected-pledge__amt" placeholder="200"></input>
+          <input type="number" class="selected-pledge__amt" min="200" placeholder="200"></input>
           <button class="selected-pledge__btn gray-btn" >Continue</button>
         </div>
       </div>
@@ -225,6 +234,7 @@
 
   <!-- Success modal end -->
 
-  <script src="app.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/backers.js"></script>
 </body>
 </html>

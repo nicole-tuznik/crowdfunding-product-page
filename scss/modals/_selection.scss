@@ -57,6 +57,14 @@
   }
 }
 
+.modal-option.selected {
+  border: 2px solid $cyan;
+
+  .selected-pledge {
+    display: flex;
+  }
+}
+
 // Radio button styling
 .radio {
   display: flex;
