@@ -13,6 +13,21 @@ hamburger.addEventListener("click", function () {
   }
 });
 
+// Bookmark button
+const bookmarkBtn = document.querySelector(".hero__bookmark-btn");
+const bookmarkText = document.querySelector(".hero__bookmark-txt");
+
+bookmarkBtn.addEventListener("click", function () {
+  // Toggle Bookmark/Bookmarked text
+  bookmarkBtn.classList.toggle("bookmarked");
+
+  if (bookmarkText.innerHTML === "Bookmark") {
+    bookmarkText.innerHTML = "Bookmarked";
+  } else {
+    bookmarkText.innerHTML = "Bookmark";
+  }
+});
+
 // Modals - show and hide pledge modal
 
 let openModal = document.querySelectorAll(".reward__btn");
@@ -21,6 +36,15 @@ const selectionModal = document.querySelector(".selection-modal");
 
 openModal.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
+    let curData = e.target.dataset.pledge;
+
+    for (i = 0; i < radioInputs.length; i++) {
+      if (radioInputs[i].classList.contains(curData)) {
+        radioInputs[i].checked = true;
+        createCyanBackground();
+      }
+    }
+
     selectionModal.classList.toggle("closed");
   });
 });
@@ -32,69 +56,95 @@ closeBtn.addEventListener("click", function () {
 // Create cyan outline on selected option
 const radioInputs = document.querySelectorAll(".radio__input input");
 
-let selectedPledge = document.querySelectorAll(".selected-pledge");
-
-// for (let i = 0; i < radioInputs.length; i++) {
-//   radioInputs[i].addEventListener("click", function () {
-//     let curClass = radioInputs[i].classList;
-//     if (radioInputs[i].checked) {
-//       radioInputs[i].closest(".modal-option").style.border =
-//         "2px solid hsl(176, 50%, 47%)";
-//       document.querySelector(`.selected-pledge.${curClass}`).style.display =
-//         "flex";
-//     } else {
-//       radioInputs[i].closest(".modal-option").style.border = "1px solid black";
-//       document.querySelector(`.selected-pledge.${curClass}`).style.display =
-//         "none";
-//     }
-//   });
-// }
-
-// radioInputs.forEach(function (input) {
-//   input.addEventListener("click", function (e) {
-//     // for button i = 1..5
-
-//     let curClass = input.classList;
-
-//     for (let i = 0; i < radioInputs.length; i++) {
-//       console.log(radioInputs[i]);
-
-//       if (input.checked) {
-//         input.closest(".modal-option").classList.add("selected");
-
-//         input.closest(".modal-option").style.border =
-//           "2px solid hsl(176, 50%, 47%)";
-
-//         document.querySelector(`.selected-pledge.${curClass}`).style.display =
-//           "flex";
-//       } else if (!input.checked) {
-//         input.closest(".modal-option").style.border = "1px solid black";
-//         document.querySelector(`.selected-pledge.${curClass}`).style.display =
-//           "none";
-
-//         input.closest(".selected-pledge").style.display = "none";
-//       }
-//     }
-//   });
-// });
-
 radioInputs.forEach(function (input) {
-  input.addEventListener("click", function (e) {
-    for (let i = 0; i < radioInputs.length; i++) {
-      let curClass = radioInputs[i].classList;
+  input.addEventListener("click", function (i) {
+    createCyanBackground(i);
+  });
+});
 
-      if (radioInputs[i].checked) {
-        radioInputs[i].closest(".modal-option").style.border =
-          "2px solid hsl(176, 50%, 47%)";
+function createCyanBackground(i) {
+  for (let i = 0; i < radioInputs.length; i++) {
+    let curClass = radioInputs[i].classList;
+    if (radioInputs[i].checked) {
+      radioInputs[i].closest(".modal-option").style.border =
+        "2px solid hsl(176, 50%, 47%)";
 
-        document.querySelector(`.selected-pledge.${curClass}`).style.display =
-          "flex";
-      } else if (!radioInputs[i].checked) {
-        radioInputs[i].closest(".modal-option").style.border =
-          "1px solid black";
-        document.querySelector(`.selected-pledge.${curClass}`).style.display =
-          "none";
+      document.querySelector(`.selected-pledge.${curClass}`).style.display =
+        "flex";
+    } else if (!radioInputs[i].checked) {
+      radioInputs[i].closest(".modal-option").style.border = "1px solid black";
+      document.querySelector(`.selected-pledge.${curClass}`).style.display =
+        "none";
+    }
+  }
+}
+
+let amtRaised = document.querySelector(".backed__amt-raised span");
+let totalBackers = document.querySelector(".backed__total-backers span");
+let progressBar = document.querySelector(".backed__progress-completed");
+
+let newPledgeInput = document.querySelectorAll(".selected-pledge__amt");
+
+// Modals - show/hide success modal
+const continueBtns = document.querySelectorAll(".selected-pledge__btn");
+const successModal = document.querySelector(".success-modal");
+const successModalClose = document.querySelector(".success-modal__btn");
+
+let rewardsRemaining = document.querySelectorAll(
+  ".modal-option__remaining span"
+);
+let rewardsLeft = document.querySelectorAll(".reward__left span");
+
+let currentAmtRaised = 89914;
+let currentBackers = 5007;
+let progress;
+
+continueBtns.forEach(function (btn) {
+  btn.addEventListener("click", function (e) {
+    // Close selection modal and option success modal
+    selectionModal.classList.toggle("closed");
+    successModal.style.display = "flex";
+
+    // Increase total $ backed
+    let currentInput =
+      parseInt(e.target.previousElementSibling.value) ||
+      parseInt(e.target.previousElementSibling.min);
+
+    currentAmtRaised = currentAmtRaised + currentInput;
+    amtRaised.innerHTML = `$${currentAmtRaised.toLocaleString()}`;
+
+    // Increase total backers
+    currentBackers++;
+    totalBackers.innerHTML = currentBackers.toLocaleString();
+
+    // Increase progress bar
+    progress = Math.floor((currentAmtRaised / 100000) * 100);
+    progressBar.style.width = `${progress}%`;
+
+    // Uncheck radio buttons and clear checked styling
+    clearRadios();
+    createCyanBackground();
+
+    // If rewards remaining, subtract 1 from remaining (both main page & modal)
+    let curData = e.target.dataset.pledge;
+    for (i = 0; i < rewardsRemaining.length; i++) {
+      if (rewardsRemaining[i].dataset.pledge === curData) {
+        let curRewardsRemaining = rewardsRemaining[i].innerHTML;
+        curRewardsRemaining = parseInt(curRewardsRemaining);
+        curRewardsRemaining--;
+        rewardsRemaining[i].innerHTML = curRewardsRemaining;
+        rewardsLeft[i].innerHTML = curRewardsRemaining;
       }
     }
   });
 });
+
+successModalClose.addEventListener("click", function () {
+  successModal.style.display = "none";
+});
+
+function clearRadios() {
+  for (i = 0; i < radioInputs.length; i++) {
+    radioInputs[i].checked = false;
+  }
+}

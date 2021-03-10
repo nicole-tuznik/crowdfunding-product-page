@@ -157,6 +157,10 @@
       font-weight: 700;
       color: $dk-gray;
     }
+
+    &.no-reward::after {
+      content: none;
+    }
   }
 
   &__amt {
@@ -178,12 +182,20 @@
     }
   }
 
-  &__btn {
+  &__btn:not(:first-child) {
     padding: 0.5em 2em;
+  }
+
+  &__btn:first-child {
+    padding: 1em 2.5em;
   }
 }
 
 @media (min-width: 800px) {
+  .selected-pledge.no-reward {
+    flex-direction: row-reverse;
+  }
+
   .selected-pledge {
     flex-direction: row;
     justify-content: space-between;

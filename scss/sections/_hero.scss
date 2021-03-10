@@ -37,6 +37,7 @@
     border-radius: 50%;
     border: none;
     cursor: pointer;
+    outline: none;
 
     &:hover {
       .hero__bookmark {
@@ -47,6 +48,17 @@
 
   &__bookmark-txt {
     display: none;
+  }
+}
+
+.hero__bookmark-btn.bookmarked {
+  i {
+    background: $cyan;
+  }
+
+  h5 {
+    color: $cyan;
+    content: "Bookmarked";
   }
 }
 
