@@ -45,12 +45,12 @@ openModal.forEach(function (btn) {
       }
     }
 
-    selectionModal.classList.toggle("closed");
+    selectionModal.style.display = "flex";
   });
 });
 
 closeBtn.addEventListener("click", function () {
-  selectionModal.classList.toggle("closed");
+  selectionModal.style.display = "none";
 });
 
 // Create cyan outline on selected option
@@ -102,7 +102,7 @@ let progress;
 continueBtns.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
     // Close selection modal and option success modal
-    selectionModal.classList.toggle("closed");
+    selectionModal.style.display = "none";
     successModal.style.display = "flex";
 
     // Increase total backers

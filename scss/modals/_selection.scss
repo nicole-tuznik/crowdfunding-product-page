@@ -1,5 +1,5 @@
 .selection-modal {
-  display: flex;
+  display: none;
   flex-direction: column;
   position: fixed;
   max-height: 100%;
@@ -54,14 +54,6 @@
     font-weight: 700;
     margin-right: 10px;
     color: $black;
-  }
-}
-
-.modal-option.selected {
-  border: 2px solid $cyan;
-
-  .selected-pledge {
-    display: flex;
   }
 }
 

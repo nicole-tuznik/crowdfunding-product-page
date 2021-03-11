@@ -74,7 +74,7 @@ p {
   pointer-events: none; }
 
 .selection-modal {
-  display: flex;
+  display: none;
   flex-direction: column;
   position: fixed;
   max-height: 100%;
@@ -115,11 +115,6 @@ p {
     font-weight: 700;
     margin-right: 10px;
     color: black; }
-
-.modal-option.selected {
-  border: 2px solid #3cb4ac; }
-  .modal-option.selected .selected-pledge {
-    display: flex; }
 
 .radio {
   display: flex;
