@@ -105,35 +105,38 @@ continueBtns.forEach(function (btn) {
     selectionModal.classList.toggle("closed");
     successModal.style.display = "flex";
 
-    // Increase total $ backed
-    let currentInput =
-      parseInt(e.target.previousElementSibling.value) ||
-      parseInt(e.target.previousElementSibling.min);
-
-    currentAmtRaised = currentAmtRaised + currentInput;
-    amtRaised.innerHTML = `$${currentAmtRaised.toLocaleString()}`;
-
     // Increase total backers
     currentBackers++;
     totalBackers.innerHTML = currentBackers.toLocaleString();
-
-    // Increase progress bar
-    progress = Math.floor((currentAmtRaised / 100000) * 100);
-    progressBar.style.width = `${progress}%`;
 
     // Uncheck radio buttons and clear checked styling
     clearRadios();
     createCyanBackground();
 
-    // If rewards remaining, subtract 1 from remaining (both main page & modal)
-    let curData = e.target.dataset.pledge;
-    for (i = 0; i < rewardsRemaining.length; i++) {
-      if (rewardsRemaining[i].dataset.pledge === curData) {
-        let curRewardsRemaining = rewardsRemaining[i].innerHTML;
-        curRewardsRemaining = parseInt(curRewardsRemaining);
-        curRewardsRemaining--;
-        rewardsRemaining[i].innerHTML = curRewardsRemaining;
-        rewardsLeft[i].innerHTML = curRewardsRemaining;
+    // Only change amt backed and rewards left if a reward was selected
+    if (btn.dataset.pledge !== "no-reward") {
+      // Increase total $ backed
+      let currentInput =
+        parseInt(e.target.previousElementSibling.value) ||
+        parseInt(e.target.previousElementSibling.min);
+
+      currentAmtRaised = currentAmtRaised + currentInput;
+      amtRaised.innerHTML = `$${currentAmtRaised.toLocaleString()}`;
+
+      // Increase progress bar
+      progress = Math.floor((currentAmtRaised / 100000) * 100);
+      progressBar.style.width = `${progress}%`;
+
+      // If rewards remaining, subtract 1 from remaining (both main page & modal)
+      let curData = e.target.dataset.pledge;
+      for (i = 0; i < rewardsRemaining.length; i++) {
+        if (rewardsRemaining[i].dataset.pledge === curData) {
+          let curRewardsRemaining = rewardsRemaining[i].innerHTML;
+          curRewardsRemaining = parseInt(curRewardsRemaining);
+          curRewardsRemaining--;
+          rewardsRemaining[i].innerHTML = curRewardsRemaining;
+          rewardsLeft[i].innerHTML = curRewardsRemaining;
+        }
       }
     }
   });

@@ -2,7 +2,7 @@
   text-align: center;
 
   &--lg-text {
-    font-size: clamp(2rem, 3vw, 5rem);
+    font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 700;
     color: $black;
   }
@@ -50,7 +50,7 @@
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 750px) {
   .backed {
     display: grid;
     justify-content: center;

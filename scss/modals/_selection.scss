@@ -124,7 +124,6 @@
 
 // Pledge section styling
 .selected-pledge {
-  // display: flex;
   display: none;
   flex-direction: column;
   align-items: center;
@@ -133,10 +132,11 @@
 
   &::before {
     content: "";
-    display: block;
+    position: absolute;
     height: 1px;
-    width: calc(100vw - 7em);
-    margin-bottom: 1rem;
+    width: calc(100% + 3rem);
+    top: 0;
+    // margin-bottom: 1rem;
     background: $dk-gray;
   }
 
@@ -151,7 +151,7 @@
 
     &::after {
       content: "$";
-      top: 28%;
+      top: 35%;
       left: 10%;
       position: absolute;
       font-weight: 700;
@@ -165,10 +165,14 @@
 
   &__amt {
     border-radius: 50px;
+    border: 2px solid $dk-gray;
     width: 7rem;
     padding: 1rem 1rem 1rem 3rem;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     outline: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
 
     &::placeholder {
       font-family: inherit;
@@ -191,7 +195,7 @@
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 750px) {
   .selected-pledge.no-reward {
     flex-direction: row-reverse;
   }
@@ -202,10 +206,8 @@
     margin-top: 2rem;
 
     &::before {
-      position: absolute;
       left: calc(0px - 1.5rem);
       width: calc(100% + 3rem);
-      top: 0;
     }
 
     &__title {
