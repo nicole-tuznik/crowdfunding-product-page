@@ -39,6 +39,11 @@
   border-radius: 10px;
   margin-bottom: 2rem;
 
+  &__title {
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    font-weight: 700;
+  }
+
   &__pledge {
     color: $cyan;
     font-weight: 700;

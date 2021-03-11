@@ -30,7 +30,7 @@
       <button class="hero__btn cyan-btn reward__btn" data-pledge="no-reward">Back this project</button>
       <button class="hero__bookmark-btn ">
         <i class="fas fa-bookmark  hero__bookmark"></i>
-        <h5 class="hero__bookmark-txt">Bookmark</h5>
+        <div class="hero__bookmark-txt">Bookmark</div>
       </button>
     </div>
   </div>
@@ -107,7 +107,7 @@
           <input type="radio" class="no-reward" name="pledge">
           <span class="radio__control"></span>
         </span>
-        <h5 class="radio__label">Pledge with no reward</h5>
+        <span class="radio__label">Pledge with no reward</span>
       </label>
 
       <p class="modal-option__desc">
@@ -131,10 +131,10 @@
           <input type="radio" class="bamboo-stand" name="pledge">
           <span class="radio__control"></span>
         </span>
-        <div class="radio__label">
-          <h5 class="modal-option__title">Bamboo Stand</h5>
-          <p class="modal-option__pledge">Pledge $25 or more</p>
-        </div>
+        <span class="radio__label">
+          <span class="modal-option__title">Bamboo Stand</span>
+          <span class="modal-option__pledge">Pledge $25 or more</span>
+        </span>
         </label>
       
       <p class="modal-option__desc">
@@ -148,7 +148,7 @@
       <div class="selected-pledge bamboo-stand">
         <p class="selected-pledge__title">Enter your pledge</p>
         <div class="selected-pledge__inputs">
-          <input type="number" class="selected-pledge__amt" min="25" placeholder="25" data-pledge="bamboo-stand"></input>
+          <input type="number" class="selected-pledge__amt" min="25" placeholder="25" data-pledge="bamboo-stand" aria-label="select pledge amount of $25 or more"></input>
           <button class="selected-pledge__btn cyan-btn" data-pledge="bamboo-stand" >Continue</button>
         </div>
       </div>
@@ -161,10 +161,10 @@
           <input type="radio" class="black-edition-stand" name="pledge">
           <span class="radio__control"></span>
         </span>
-        <div class="radio__label">
-          <h5 class="modal-option__title">Black Edition Stand</h5>
-          <p class="modal-option__pledge">Pledge $75 or more</p>
-        </div>
+        <span class="radio__label">
+          <span class="modal-option__title">Black Edition Stand</span>
+          <span class="modal-option__pledge">Pledge $75 or more</span>
+        </span>
       </label>
       
       <p class="modal-option__desc">
@@ -178,7 +178,7 @@
       <div class="selected-pledge black-edition-stand">
         <p class="selected-pledge__title">Enter your pledge</p>
         <div class="selected-pledge__inputs">
-          <input type="number" class="selected-pledge__amt" min="75" placeholder="75"></input>
+          <input type="number" class="selected-pledge__amt" min="75" placeholder="75" aria-label="select pledge amount of $75 or more"></input>
           <button class="selected-pledge__btn cyan-btn" data-pledge="black-edition-stand">Continue</button>
         </div>
       </div>
@@ -191,10 +191,10 @@
           <input type="radio" class="mahogany-special-edition" name="pledge" disabled>
           <span class="radio__control"></span>
         </span>
-          <div class="radio__label">
-            <h5 class="modal-option__title">Mahogany Special Edition</h5>
-            <p class="modal-option__pledge">Pledge $200 or more</p>
-          </div>
+          <span class="radio__label">
+            <span class="modal-option__title">Mahogany Special Edition</span>
+            <span class="modal-option__pledge">Pledge $200 or more</span>
+          </span>
       </label>
       
       <p class="modal-option__desc">
@@ -208,7 +208,7 @@
       <div class="selected-pledge mahogany-special-edition">
         <p class="selected-pledge__title">Enter your pledge</p>
         <div class="selected-pledge__inputs">
-          <input type="number" class="selected-pledge__amt" min="200" placeholder="200"></input>
+          <input type="number" class="selected-pledge__amt" min="200" placeholder="200" aria-label="select pledge amount of $200 or more"></input>
           <button class="selected-pledge__btn gray-btn" >Continue</button>
         </div>
       </div>
