@@ -23,8 +23,10 @@ bookmarkBtn.addEventListener("click", function () {
 
   if (bookmarkText.innerHTML === "Bookmark") {
     bookmarkText.innerHTML = "Bookmarked";
+    bookmarkText.style.color = "hsl(176, 50%, 47%)";
   } else {
     bookmarkText.innerHTML = "Bookmark";
+    bookmarkText.style.color = "hsl(0, 0%, 48%)";
   }
 });
 

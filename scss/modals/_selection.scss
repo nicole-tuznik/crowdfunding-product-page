@@ -47,6 +47,7 @@
   &__pledge {
     color: $cyan;
     font-weight: 700;
+    padding-top: 0.3rem;
   }
 
   &__remaining {
@@ -105,6 +106,8 @@
   }
 
   &__label {
+    display: flex;
+    flex-direction: column;
     line-height: 1;
     cursor: pointer;
 

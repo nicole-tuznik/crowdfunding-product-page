@@ -109,7 +109,8 @@ p {
     font-weight: 700; }
   .modal-option__pledge {
     color: #3cb4ac;
-    font-weight: 700; }
+    font-weight: 700;
+    padding-top: 0.3rem; }
   .modal-option__remaining {
     display: flex;
     align-items: center; }
@@ -148,6 +149,8 @@ p {
   .radio .radio__input input:checked + .radio__control::before {
     transform: scale(1); }
   .radio__label {
+    display: flex;
+    flex-direction: column;
     line-height: 1;
     cursor: pointer; }
     .radio__label:hover {
@@ -422,7 +425,8 @@ p {
     display: block;
     padding: 1.3rem 1.5rem 1.3rem 1.3rem;
     color: #7a7a7a;
-    font-size: 1rem; } }
+    font-size: 1rem;
+    font-weight: 700; } }
 
 .nav {
   padding: 2rem;
