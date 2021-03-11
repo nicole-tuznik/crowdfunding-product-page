@@ -241,9 +241,7 @@ p {
     padding-bottom: 0; }
     .radio__label {
       display: flex;
-      align-items: center; }
-  .modal-option__pledge {
-    padding-left: 1rem; } }
+      align-items: center; } }
 
 .success-modal {
   display: none;
