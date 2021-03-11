@@ -163,6 +163,7 @@ p {
   flex-direction: column;
   align-items: center;
   padding-top: 2rem;
+  margin-top: 1rem;
   position: relative; }
   .selected-pledge::before {
     content: "";
