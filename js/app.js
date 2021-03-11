@@ -79,13 +79,13 @@ function createCyanBackground(i) {
   }
 }
 
+// Modals - show/hide success modal
 let amtRaised = document.querySelector(".backed__amt-raised span");
 let totalBackers = document.querySelector(".backed__total-backers span");
 let progressBar = document.querySelector(".backed__progress-completed");
 
 let newPledgeInput = document.querySelectorAll(".selected-pledge__amt");
 
-// Modals - show/hide success modal
 const continueBtns = document.querySelectorAll(".selected-pledge__btn");
 const successModal = document.querySelector(".success-modal");
 const successModalClose = document.querySelector(".success-modal__btn");
